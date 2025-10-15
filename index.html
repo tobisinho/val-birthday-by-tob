@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FELIZ CUMPLEEE !!!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="contenedor">
+
+    <!-- Música -->
+    <button id="playMusica">Soundtrack 🎶</button>
+    <audio id="musica" src="soundtrack.mp3" loop></audio>
+    <audio id="blip" src="blip.wav"></audio>
+    <audio id="clickSound" src="click.wav"></audio>
+
+    <!-- Pantalla diálogo + menú -->
+    <div id="pantalla1" class="pantalla">
+      <img src="pj.png" alt="Personaje" id="personaje">
+      <div id="dialogo">
+        <p id="texto"></p>
+<img id="avanzar" src="flecha.png" alt="Avanzar">
+      </div>
+    </div>
+
+    <!-- Pantalla slideshow recuerdos -->
+    <div id="pantalla2" class="pantalla oculto">
+      <h2>📸 Algunos recuerdos...</h2>
+      <div class="slideshow">
+        <img src="foto1.jpg" class="foto" alt="foto1">
+        <img src="foto2.jpg" class="foto oculto" alt="foto2">
+        <img src="foto3.jpg" class="foto oculto" alt="foto3">
+      </div>
+      <div id="textoFoto" class="cuadroTexto"></div>
+      <button id="siguienteFotos">Siguiente ➡️</button>
+    </div>
+
+    <!-- Pantalla dibujos -->
+    <div id="pantallaDibujos" class="pantalla oculto">
+      <h2>🎨 Dibujos</h2>
+      <div class="slideshow">
+        <img src="dibujo1.png" class="fotoDibujo" alt="dibujo1">
+        <img src="dibujo2.png" class="fotoDibujo oculto" alt="dibujo2">
+        <img src="dibujo3.png" class="fotoDibujo oculto" alt="dibujo3">
+      </div>
+      <button id="siguienteDibujo">Siguiente ➡️</button>
+      <div id="descargasDibujos"></div>
+    </div>
+
+    <!-- Pantalla mensaje final -->
+    <div id="pantallaFinal" class="pantalla oculto">
+      <h2>🎉 ¡Feliz Cumpleaños val ❣!</h2>
+      <div id="mensajeFinalBox" class="cuadroTexto">
+        <p>Eso es todo, espero que mi regalito te haya gustado, lo hice con mucho cariño y esfuerzo (me llevó varios días), pasala muy lindooo y te quiero muchoteee 💕💕</p>
+      </div>
+      <button id="volverMenuFinal">Volver al menú</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

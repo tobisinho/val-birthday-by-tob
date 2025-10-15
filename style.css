@@ -1,0 +1,204 @@
+body {
+  background-image: url('fondo.jpg'); /* tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Courier New", monospace;
+  color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#contenedor { text-align: center; }
+
+.pantalla { display: block; }
+.oculto { display: none; }
+
+#personaje { width: 200px; margin-bottom: 20px; }
+
+#dialogo {
+  background: #222;
+  border: 3px solid white;
+  padding: 20px;
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+#texto { min-height: 80px; text-align: left; }
+
+#avanzar {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#playMusica {
+  position: fixed; /* ahora queda fijo en pantalla */
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px white;
+  z-index: 1000; /* se asegura de estar encima de todo */
+}
+
+
+#playMusica:hover {
+  background: #666;
+  box-shadow: 0 0 15px white, 0 0 30px #0ff;
+}
+
+#playMusica:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+/* Slideshow */
+.slideshow { max-width: 400px; margin: auto; }
+.foto, .fotoDibujo { width: 100%; border-radius: 15px; }
+
+/* Cuadro de texto genérico */
+.cuadroTexto {
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 12px auto 8px auto;
+  font-size: 16px;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* Mensaje final más grande */
+#mensajeFinalBox {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+/* Botones */
+#opcionesFinal button, #descargasDibujos button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: 2px solid white;
+  background: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+#opcionesFinal button:hover, #descargasDibujos button:hover {
+  background: white; color: black;
+}
+
+/* Parpadeo */
+@keyframes parpadeo {
+  0%, 100% { box-shadow: 0 0 10px white; }
+  50% { box-shadow: 0 0 20px white; }
+}
+#dialogo.parpadeando { animation: parpadeo 1s infinite; }
+
+h2 {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 8px 16px;
+  margin-bottom: 15px;
+}
+
+.particula {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.foto {
+  max-height: 300px; /* ajustá este valor a gusto */
+  width: auto;
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
+
+#avanzar {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;   /* tamaño de la flecha */
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#avanzar:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px white);
+}
+
+#avanzar:active {
+  transform: scale(0.9);
+  filter: drop-shadow(0 0 10px cyan);
+}
+
+/* 🔹 Adaptación para pantallas chicas (celulares) */
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  #contenedor {
+    width: 100%;
+  }
+
+  #dialogo {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .slideshow {
+    max-width: 90%;
+  }
+
+  .foto, .fotoDibujo {
+    max-width: 100%;
+    max-height: 220px; /* achica las verticales */
+  }
+
+  .cuadroTexto {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+
+  #playMusica {
+    top: 10px;
+    right: 10px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
