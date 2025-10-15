@@ -181,12 +181,18 @@ h2 {
     text-align: center;
   }
 
-  #pantalla1, #pantalla2, #pantallaDibujos, #pantallaFinal {
+  /* 🔹 Solo centramos la pantalla visible, sin forzar display:flex */
+  .pantalla:not(.oculto) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* ocupa toda la altura del celular */
+    min-height: 100vh;
+  }
+
+  /* 🔹 Las ocultas siguen ocultas */
+  .oculto {
+    display: none !important;
   }
 
   #personaje {
