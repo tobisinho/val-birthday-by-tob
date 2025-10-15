@@ -9,7 +9,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+min-height: 100vh;
+background-attachment: fixed;
 }
 
 #contenedor { text-align: center; }
@@ -22,12 +23,14 @@ body {
 #dialogo {
   background: #222;
   border: 3px solid white;
-  padding: 20px;
+  padding: 20px 20px 50px 20px; /* deja espacio para el botón */
   width: 400px;
   margin: 0 auto;
   border-radius: 10px;
   position: relative;
+  box-sizing: border-box;
 }
+
 
 #texto { min-height: 80px; text-align: left; }
 
@@ -210,6 +213,11 @@ h2 {
     box-sizing: border-box;
   }
 
+  #dialogo {
+  padding-bottom: 60px; /* espacio extra en celular */
+}
+
+
   #texto {
     text-align: left;
   }
@@ -246,4 +254,67 @@ h2 {
     font-size: 12px;
   }
 }
+
+.pantalla {
+  overflow-y: auto; /* permite scroll vertical si hay mucho contenido */
+}
+
+/* 🔧 Centrado correcto en celular sin afectar PC */
+@media (max-width: 600px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+
+  #contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .pantalla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .slideshow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foto, .fotoDibujo {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .cuadroTexto, #textoFoto {
+    text-align: center;
+    margin: 10px auto 0 auto;
+  }
+
+  #opcionesFinal, #descargasDibujos, .botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+  /* 🔹 Botones de “Siguiente” justo debajo de la imagen */
+  #siguienteFotos, 
+  #siguienteDibujo {
+    margin-top: 10px; /* espacio pequeño debajo de la imagen */
+    align-self: center;
+  }
+
 
