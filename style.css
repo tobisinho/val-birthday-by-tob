@@ -163,17 +163,26 @@ h2 {
 @media (max-width: 600px) {
   body {
     flex-direction: column;
-    height: auto;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;        /* ocupa toda la pantalla del celular */
+    padding: 0;           /* sin márgenes extra */
   }
 
   #contenedor {
     width: 100%;
+    max-width: 400px;     /* límite para mantener proporción */
+    text-align: center;
   }
 
   #dialogo {
     width: 90%;
     padding: 15px;
+    margin: 0 auto;
+  }
+
+  #personaje {
+    width: 180px;
   }
 
   .slideshow {
@@ -182,7 +191,7 @@ h2 {
 
   .foto, .fotoDibujo {
     max-width: 100%;
-    max-height: 220px; /* achica las verticales */
+    max-height: 220px;
   }
 
   .cuadroTexto {
@@ -202,3 +211,4 @@ h2 {
     font-size: 12px;
   }
 }
+
